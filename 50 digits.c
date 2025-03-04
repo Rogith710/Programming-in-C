@@ -22,7 +22,7 @@ void add(char* x,char* y,int m){
 void sub(char* x,char* y,int m,int flag){
     int z[50],q=0;
     for(int i=m-1;i>=0;i--){
-        if(x[i]-(y[i]+q)<0){
+        if((int)(x[i]-y[i])-q<0){
             z[i]=10+(int)(x[i]-y[i])-q;
             q=1;
         }
@@ -57,7 +57,7 @@ void main()
     printf("Enter 1 for addition and 2 for subtraction :");
     scanf("%d",&l);
     int m,n;
-    if(strlen(x)<strlen(y) || (strlen(x)==strlen(y) && x<y)){
+    if(strlen(x)<strlen(y) || ((strlen(x)==strlen(y) && x<y))){
         strcpy(z,x);
         strcpy(x,y);
         strcpy(y,z);
